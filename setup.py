@@ -5,7 +5,7 @@ setup(
     version='0.1.0',
     author='Ching-An Cheng',
     author_email='chinganc@microsoft.com',
-    packages=['iql-pytorch'],
+    packages=['iqlpytorch'],
     url='https://github.com/chinganc/IQL-PyTorch',
     license='MIT LICENSE',
     description='An installable version of gwthomas/IQL-PyTorch',

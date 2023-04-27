@@ -73,3 +73,16 @@ class ImplicitQLearning(nn.Module):
         policy_loss.backward()
         self.policy_optimizer.step()
         self.policy_lr_schedule.step()
+
+        with torch.no_grad():
+            log_info = dict(policy_loss=policy_loss.item(),
+                            q_loss=q_loss.item(),
+                            v_loss=v_loss.item(),
+                            bc_loss_mean=bc_losses.mean().item(),
+                            exp_adv_mean=exp_adv.mean().item(),
+                            v_target_mean=target_q.mean().item(),
+                            q_target_mean=targets.mean().item(),
+                            v_pred_mean=v.mean().item(),
+                            q1_pred_mean=qs[0].mean().item(),
+                            q2_pred_mean=qs[1].mean().item())
+        return log_info

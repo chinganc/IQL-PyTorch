@@ -6,10 +6,10 @@ import numpy as np
 import torch
 from tqdm import trange
 
-from src.iql import ImplicitQLearning
-from src.policy import GaussianPolicy, DeterministicPolicy
-from src.value_functions import TwinQ, ValueFunction
-from src.util import return_range, set_seed, Log, sample_batch, torchify, evaluate_policy
+from iqlpytorch.iql import ImplicitQLearning
+from iqlpytorch.policy import GaussianPolicy, DeterministicPolicy
+from iqlpytorch.value_functions import TwinQ, ValueFunction
+from iqlpytorch.util import return_range, set_seed, Log, sample_batch, torchify, evaluate_policy
 
 
 def get_env_and_dataset(log, env_name, max_episode_steps):
